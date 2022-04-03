@@ -3,21 +3,414 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
+		<title>Svelte Devsnack</title>
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
-
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			:root {
+				--r-heading1-text-shadow: .05em .05em .05em #000;
+			}
+			p code, li code { 
+				background-color: rgba(255,255,255,0.1);
+				color: #FF3C00;
+				font-size: 70%; 
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<section>
+						<img src="/dist/assets/svelte.svg" alt="Svelte Logo" width="199" height="240">
+						<h1>Svelte</h1>
+						<p>DevSnack 04.04.2022</p>
+						<aside class="notes">
+							<ul>
+								<li>Willkommen zum heutigen DevSnack</li>
+								<li>Mein Name ist Nico Brünjes und ich möchte mich mit Ihnen über Svelte und Svelte Kit unterhalten</li>
+								<li>Zunächst das Wichtigste vorne weg: es heisst „Svellt“, nicht Svelte</li>
+								<li>so wie es Jif heisst und nicht Gif</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/nkotb.gif">
+						<h1>New kid on the block?</h1>
+						<aside class="notes">
+							<ul>
+								<li>Svelte wird irgendwie immer noch als neu wahrgenommen…</li>
+								<li>… das stimmt so aber gar nicht.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<p>Version 1 erschien schon 2016</p>
+						<img class="fragment fade-up" src="/dist/assets/harris.jpeg" class="fragment" width="200" height="200" style="border-radius:50%;border:5px solid #fff;">
+						<p class="fragment fade-up"><small>Rich Harris</small></p>
+						<p class="fragment fade-up"><small>The Guardian → New York Times → Vercel</small></p>
+						<aside class="notes">
+							<ul>
+								<li>Version 1 erschien schon 2016</li>
+								<li>Ausgedacht wurde das alles von Richard Harris</li>
+								<li>Journalist und (!) Infografiker</li>
+								<li>Zunächst beim Guardian, dann der New York Times und nun bei Vercel</li>
+								<li>Wo er sich hauptberuflich um Svelte kümmern kann.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Aktuelle Version ist<br><code style="font-weight:400;color:#FF3C00">3.46.6</code></h2>
+						<aside class="notes">
+							<ul>
+								<li>Aktuelle Version ist die 3.46.6</li>
+								<li>da hat sich also einiges getan seit 2016</li>
+								<li>Aus dem Nutzungsszenario heraus hat Harris drei Ziele für Svelte formuliert</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/spanish.gif"  data-transition="zoom">
+						<div style="background-color: rgba(0,0,0,0.55);padding:20px">
+							<h2 style="text-shadow:var(--r-heading1-text-shadow);">The chief weapons…</h2>
+							<ul>
+								<li class="fragment fade-up" style="text-shadow:var(--r-heading1-text-shadow);">möglichst klein und schnell</li>
+								<li class="fragment fade-up" style="text-shadow:var(--r-heading1-text-shadow);">einfach und schnell produktiv</li>
+								<li class="fragment fade-up" style="text-shadow:var(--r-heading1-text-shadow);">flüssige Animationen</li>
+							</ul>
+						</div>
+						<aside class="notes">
+							<ul>
+								<li>die wie zufällig auch für uns sehr interessant sein könnten</li>
+								<li>Svelte soll klein und schnell sein</li>
+								<li>einfach zu lernen und schnell produktiv machen</li>
+								<li>und flüssige Animationen ermöglichen</li>
+								<li>wie diese Ziele erreicht werden, schauen wir uns gleich einmal an</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-transition="zoom">
+						<img src="/dist/assets/schmidt.jpg" width="400" height="259" alt="Der olle Schmidt">
+						<blockquote>
+							<p>„Was für den Guardian richtig war, kann für ZEIT ONLINE nicht falsch sein.“</p>
+							<cite>— Helmut Schmidt, 2022</cite>
+						</blockquote>
+						<aside class="notes">
+							<ul>
+								<li>Aber vorher möchte ich noch auf dieses Zitat verweisen, dass ich im Internet gefunden habe</li>
+								<li>Tatsächlich stimmt das natürlich…</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Möglichst klein und schnell</h2>
+						<aside class="notes">
+							<ul>
+								<li>Also klein, klein und schnell.</li>
+							</ul>
+						</aside>	
+					</section>
+					<section>
+						<h2>Svelte <em>ist</em> schnell</h2>
+						<aside class="notes">
+							<ul>
+								<li>Tatsächlich __ist__ Svelte schnell. Das kann man ja messen.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>
+    Svelte ist schneller als... <span class="fragment"><span style="color:red">React</span>.<span class="fragment">.. und <span style="color:blue">Preact</span>.</span><span class="fragment">.. und <span style="color:green">Angular</span>.</span><span class="fragment">.. und <span style="color:gold">Vue</span>.</span><span class="fragment">.. und Elm</span><span class="fragment">, Apline</span><span class="fragment">, Ember</span><span class="fragment">, Dojo...</span><span class="fragment"> also als alle Frameworks die ich kenne.</span>
+						</h3>
+						<p class="fragment"><a href="https://krausest.github.io/js-framework-benchmark/2022/table_chrome_99.0.4844.51.html">JS-Frameworks Benchmark</a></p>
+						<aside class="notes">
+							<ul>
+								<li>Kann man dort alles nachlesen.</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/sister.gif" data-transition="zoom">
+						<h1 class="r-fit-text">Aber warum???</h1>
+						<aside class="notes">
+							<ul>
+								<li>Jetzt muss man sich natürlich fragen, wie kann das angehen, dass Svelte so schnell ist.</li>
+								<li>Na hauptsächlich, weil wir hier gerade Quitten mit Kürbissen verglichen werden, weil…</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<div class="r-stack">
+							<h2>Svelte ist<br>gar kein<br>Framework!</h2>
+							<img class="fragment" src="/dist/assets/joyride.gif" style="aspect-ratio:498/210;width:800px" alt="whatever">
+						</div>
+						<aside class="notes">
+							<ul>
+								<li>In dieser Szene hört man übrigens normalerweise das Star Wars Thema…</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<div class="r-stack">
+							<h2>Svelte benutzt kein Virtual DOM.</h2>
+							<img class="fragment" src="/dist/assets/nodom.gif" style="aspect-ratio:498/208;width:70vw" alt="whatever">
+						</div>
+						<aside class="notes">
+							<ul>
+								<li>Gott sei dank muss man da sagen. Weil wenn man etwas noch komplizierter machen möchte, als das DOM, dann nimmt man das Virual DOM hinzu</li>
+								<li>Und schaufelt dauernd alles hin und her.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<div class="r-stack">
+							<h2>Svelte ist ein Compiler.</h2>
+							<img class="fragment" src="/dist/assets/ferris.gif" style="aspect-ratio:498/208;width:70vw" alt="whatever">
+						</div>
+						<aside class="notes">
+							<ul>
+								<li>Nicht mit Svelte. Svelte ist ein Compiler.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Svelte kompiliert HTML, CSS, Javascript und die wenigen <em>sveltischen</em> Module und Kommandos in Javascript-Module.</h3>
+						<aside class="notes">
+							<ul>
+								<li>Das hatten wir uns jetzt schon gedacht. Das bringt allerdings tatsöchlich ein paar Vorteile:</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<ul>
+							<li>Es muss kein Frameworkcode geladen werden.</li>
+							<li class="fragment">Es wird nur der Code ausgeliefert, der auch gebraucht wird.</li>
+							<li class="fragment">Svelte ist mit anderen Frameworks kombinierbar. </li>
+							<li class="fragment">Svelte ist leichter zu erweitern, weil neue Features nur dort zum Tragen kommen, wo sie gebraucht werden.</li>
+						</li>
+					</section>
+					<section data-background-image="/dist/assets/mouse.gif"  data-transition="zoom">
+						<aside class="notes">
+							<ul>
+								<li>Deswegen ist Svelte also so schnell. Mal sehen, wie leicht es zu lernen ist.</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Einfach und schnell produktiv</h2>
+						<aside class="notes">
+							<ul>
+								<li>Einfach zu lernen ist ja eine Sache</li>
+								<li>die Forderung nach schneller Produktivität, da merkt man schon, das Svelte aus dem Verlagsumfeld kommt.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Gute alte Bekannte</h2>
+						<div style="display:flex;justify-content:space-between;">
+							<img class="fragment" style="background:rgba(255,255,255,0.25);padding: 5px;" src="/dist/assets/html5.svg" width="300" height="300" alt="html5">
+							<img class="fragment" style="background:rgba(255,255,255,0.25);padding: 5px;" src="/dist/assets/css3.svg" width="300" height="300" alt="css3">
+							<img class="fragment" style="background:#F7DF1E;padding: 5px;" src="/dist/assets/js.svg" width="300" height="300" alt="js">
+						</div>
+						<aside class="notes">
+							<ul>
+								<li>Den Einstieg jedenfalls macht Svelte uns leicht, denn es besteht aus</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Komponentenlayout bei vue3 abgeschaut…</h3>
+						<pre><code data-trim>
+						<script>
+							let name = 'Weeeeee';
+						</script>
+
+						<h1>Say <span>{name}</span>!</h1>
+
+						<style>
+							span {
+								color: rebeccapurple;
+							}
+						</style>						
+						</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>Das Codelayout (die Reihenfolge ist übrigens beliebig) ist angenehm</li>
+								<li>Es gibt zwar eine Art Templatesprache, aber keine Kapriolen wie JSX, oder CSS in JS</li>
+								<li>mit ein paar Handgriffen kann man statt CSS auch den Präprozessor seiner Wahl einsetzen</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/7a3d0a464ee24f5a9df1e361e141b094">
+						<aside class="notes">
+							<ul>
+								<li>hier das Codebeispiel nochmal als REPL</li>
+								<li>das praktische Livecoding-Tool gehört zu Svelte quasi dazu</li>
+								<li>Hier also meine Hello World Komponente</li>
+								<li>in Svelte ist ja alles Komponente</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<ul>
+							<li>Komponenten sind in „HTML“ geschrieben.</li>
+							<li class="fragment">Sie können Scripte und Styles enthalten.</li>
+							<li class="fragment">Sie können andere Komponenten importieren.</li>
+							<li class="fragment">Diese haben jeweils ihren eigenen Scope.</li>
+						</li>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/658d63b0eee740079181ac246fbb5348"></section>
+					<section><h2>Kontrollstrukturen</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/d2bb1781d03547e2a272f7b0bf9460cc"></section>
+					<section data-background-iframe="https://svelte.dev/repl/ad5cccee5fec40b1a237993711e994e1"></section>
+					<section data-background-iframe="https://svelte.dev/repl/4e85459f270e411ea50a0c52d0d13144"></section>
+					<section><h2>Events</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/41af029da6ac4392943492dc989a1042"></section>
+					<section data-background-iframe="https://svelte.dev/repl/8efd691a5c494fbda029b2ed581716d6"></section>
+					<section><h2>Properties</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/dcac3f0d004849f6880454e2e18fb7e2"></section>
+					<section><h2>Lifecycle functions</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/62d06c822ad14e2a8fa4b426cb7967dc"></section>
+					<section data-background-iframe="https://svelte.dev/repl/014c76a83f1f4e888a0c73b1e1060de9"></section>
+					<section>
+						<h2>Tick?</h2>
+						<blockquote>Returns a promise that resolves once any pending state changes have been applied, or in the next <em style="color:#FF3C00">microtask</em> if there are none..</blockquote>
+					</section>
+					<section data-background-image="/dist/assets/bueller-anyone.gif"  data-transition="zoom"></section>
+					<section>
+						<blockquote>When you update component state in Svelte, it doesn't update the DOM immediately. Instead, it waits until the next microtask to see if there are any other changes that need to be applied, including in other components. Doing so avoids unnecessary work and allows the browser to batch things more effectively.</blockquote>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/9847a030c6e946e583837839a3799452"></section>
+					<section data-background-image="/dist/assets/radioactivity.jpg" data-background-size="contain" data-transition="zoom"></section>
+					<section><h2>Reactive statements</h2></section>
+					<section>
+						<blockquote>Any top-level statement (i.e. not inside a block or a function) can be made reactive by prefixing it with the $: JS label syntax. Reactive statements run immediately before the component updates, whenever the values that they depend on have changed.</blockquote>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/f1ca21d52bde47c0931128dd9c0167ac"></section>
+					<section data-background-image="/dist/assets/more.gif"  data-transition="zoom"></section>
+					<section>
+						<p>Text expressions, <code>&lt;div>{(/^[A-Za-z ]+$/).test(value) ? x : y}&lt;/div></code></span><span class="fragment">, <code>{@html}</code></span><span class="fragment">, bind:property (Daten vom Kind ans Elternelement reichen)</span><span class="fragment">, bind:group (Gruppen von <code>input</code> verknüpfen)</span><span class="fragment">, bind:this (DOM-Node referenzieren)</span><span class="fragment">, Actions (Funktionen die ablaufen, wenn ein Element erschaffen wird)</span><span class="fragment">, in:fn/out:fn</span><span class="fragment">, --style-props (zur Übergabe von CSS custom properties)</span><span class="fragment">, <code>&lt;svelte:self></code> (Rekursion, baby)</span><span class="fragment">, createEventDispatcher (Events durch Komponenten bubblen lassen)…</span></p>
+					</section>
+					<section data-background-image="/dist/assets/onelastthing.gif"  data-transition="zoom">
+						<h1>Eine letzte Sache noch</h1>
+					</section>
+					<section><h2>Svelte Store(s)</h2></section>
+					<section>
+						<ul>
+							<li>Komponenten können miteinander Daten austauschen über <em>props</em>, <em>2-way-data-binding</em> und <em>Events</em>… das sind allerdings immer Eltern-Kind-Beziehungen…</li>
+							<li class="fragment">Aber nicht jede Information über den <em>state</em> unserer App, passt oder gehört in diese Komponentenhierachie.</li>
+							<li class="fragment">Beispielsweise will man nicht den Login-Zustand eines Nutzers immer durch einen Baum von Komponenten reichen.</li>
+							<li class="fragment">Dafür sind die drei Svelte Stores.</li>
+						</ul>
+					</section>
+					<section>
+						<p>Ein Store ist ein Objekt mit einer <code>subscribe()</code> Methode, die <em>interessierte Parteien</em> benachrichtigt, wann immer der Inhalt des Stores geändert wird. Optional gibt es eine <code>set()</code> Methode, die neue Werte im Store setzen kann. Dieses minimale Interface nennt sich <em>store contract</em>.</p>
+						<p class="fragment">Svelte: readable, writable and derived store.</p>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/f1d669b662ba41b2bf71e2d0a2ca8c43"></section>
+					<section data-background-image="/dist/assets/done.gif"  data-transition="zoom"></section>
+				</section>
+				<section>
+					<section><h2>3.<br>Flüssige Animationen</h2></section>
+					<section><h2>Transitions</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/95febb0ea2ac4f219b93381d8bc500a1"></section>
+					<section><h2>Tweening</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/ea49ae725be643a9a9d49d8dd7d6744e"></section>
+					<section><h2>Crossfade</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/6c7eb446ee64438f879985cb8d4982af"></section>
+				</section>
+				
+				<section>
+					<section>
+						<img src="/dist/assets/svelte.svg" alt="Svelte Logo" width="199" height="240">
+						<h1>Svelte <span style="color: #bbb">Kit</span></h1>
+					</section>
+					<section data-background-image="/dist/assets/nkotb.gif">
+						<h1>New kit on the block?</h1>
+					</section>
+					<section>
+						<ul>
+							<li>Sort of… <a href="https://svelte.dev/blog/sveltekit-beta">in public beta seit 2021</a>.</li>
+							<li>Es gab einen Vorgänger: „Sapper“, der ähnlich gestrickt war.</li> 
+					</section>
+					<section>
+						<blockquote><p>„SvelteKit is a framework for building extremely high-performance web apps.“</p></blockquote>
+					</section>
+					<section>
+						<h2>Routing</h2>
+						<ul>
+							<li class="fragment">Seiten</li>
+							<li class="fragment">Endpunkte</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Seiten</h2>
+						<ul>
+							<li class="fragment">Seiten sind Svelte-Komponenten. <code>*.svelte</code></li>
+							<li class="fragment">Rendern typischerweise HTML zur Anzeige beim Nutzer.</li>
+							<li class="fragment">Plus alles CSS und JS das gebraucht wird.</li>
+							<li class="fragment">Werden auf dem Server (SSR) <em>und</em> auf dem Client (Hydration) gerendert.</li>
+							<li class="fragment">Das genaue Verhalten ist konfigurierbar.</li>
+							<li class="fragment">Dynamische Routen werden in eckigen Klammern notiert, bspw. <code>src/routes/blog/[slug].svelte</code></li>
+						</ul>
+					</section>
+					<section data-background-image="/dist/assets/kraken.gif">
+						<a target="_blank" href="https://github.com/svelteland/svelte-kit-blog-demo/tree/main/src">Beispielprojekt</a>
+						<a target="_blank" href="https://svelteland.github.io/svelte-kit-blog-demo/">Beispielseite</a>
+					</section>
+					<section>
+						<h2>Endpunkte I</h2>
+						<ul>
+							<li class="fragment">Endpunkte sind Module die in JS oder TypeScript geschrieben sind. <code>*.js|ts</code></li>
+							<li class="fragment">Exportiert werden RequestHandler analog zu HTTP-Methoden (GET, POST, DELETE, etc.)</li>
+							<li class="fragment">Endpunkte laufen nur auf dem Server (ausser <em>prerendering</em> ist aktiviert, dann zum Build-Zeitpunkt).</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Endpunkte II</h2>
+						<ul>
+							<li class="fragment">Stellen Daten zur Verfügung, die es nur auf dem Server gibt (bspw. Datenbank, Filesystem…).</li>
+							<li class="fragment"><strong>Seiten-Endpunkte:</strong> Heissen eine Seite und ein Endpunkt (bis auf die Extension gleich), bekommt die Seite automatisch ihre <em>props</em> von dem Endpunkt (per <code>fetch</code> oder Funktionsaufruf(SSR)).</li>
+						</ul>
+					</section>
+					<section data-background-image="/dist/assets/kraken1.gif">
+						<p><a target="_blank" href="https://github.com/codecandies/rantcalendar">Beispielprojekt</a></p>
+						<p><a target="_blank" href="https://24rants.wtf/">Beispielseite</a></p>
+					</section>
+					<section>
+						<h2>Layouts</h2>
+						<ul>
+							<li class="fragment">Templates für Seiteninhalte, die auf allen Unterseiten vorkommen.</li>
+							<li class="fragment">Enthalten einen <code>&lt;slot>&lt;/slot></code> in den dann der Inhalt gerendert wird.</li>
+							<li class="fragment">Per Konvention gilt die Datei <code>__layout.svelte</code> im Routing-Verzeichnis als Hauptlayout, es können über degleichen Dateien in Unterverzeichnissen auch Layouts gegenseitig eingebettet werden.</li>
+							<li class="fragment">Unterbinden lässt sich die Vererbung mit einer <code>__layout.reset.svelte</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Hooks</h2>
+						<ul>
+							<li class="fragment">Es gibt vier Hooks: <code>handle</code>, <code>handleError</code>,<code>getSession</code> und <code>externalFetch</code>.</li>
+							<li class="fragment">Mit diesen Funktionen kann das Standard-Request/-Responseverhalten von Svelte Kit angepasst werden.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Adapter</h2>
+						<ul>
+							<li class="fragment">Bevor eine App deployt werden kann, muss sie für das <em>deployment target</em> adaptiert werden.</li>
+							<li class="fragment">Der Standard-Adapter <code>adapter-auto</code>, baut passend zu Cloudflare Pages, Netlify oder Vercel.</li>
+							<li class="fragment">Mit dem <code>adapter-node</code> wird eine Node-App gebaut, die man in beliebgen Umgebungen laufen lassen kann.</li>
+							<li class="fragment">Mit <code>adapter-static</code> baut man statische Seiten, dann fungiert Svelte also als SSG.</li>
+						</ul>
+					</section>
+					<section>
+						<p>Das ist natürlich längst nicht alles, nur alles, was ich bis jetzt ausprobieren konnte.</p>
+						<p><a href="https://kit.svelte.dev/docs/introduction">In der Doku</a> findet sich natürlich noch einiges mehr an Funktionalitäten…</p>
+					</section>
+				</section>
 			</div>
 		</div>
 
