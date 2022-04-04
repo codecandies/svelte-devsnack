@@ -100,6 +100,7 @@
 							<ul>
 								<li>Aber vorher möchte ich noch auf dieses Zitat verweisen, dass ich im Internet gefunden habe</li>
 								<li>Tatsächlich stimmt das natürlich…</li>
+								<li>Und hier endet der erste Teil… es folgt direkt der zweite…</li>
 							</ul>
 						</aside>
 					</section>
@@ -195,6 +196,8 @@
 						<aside class="notes">
 							<ul>
 								<li>Deswegen ist Svelte also so schnell. Mal sehen, wie leicht es zu lernen ist.</li>
+								<li>Wir lernen später noch, dass das etwas geprahlt ist.</li>
+								<li>Aber das war erst mal der zweite Teil. Kommen wir zu Teil 3…</li>
 							</ul>
 						</aside>
 					</section>
@@ -457,7 +460,7 @@
 						</aside>
 					</section>
 					<section>
-						<p>Text expressions, <code>&lt;div>{(/^[A-Za-z ]+$/).test(value) ? x : y}&lt;/div></code></span><span class="fragment">, <code>{@html}</code></span><span class="fragment">, bind:property (Daten vom Kind ans Elternelement reichen)</span><span class="fragment">, bind:group (Gruppen von <code>input</code> verknüpfen)</span><span class="fragment">, bind:this (DOM-Node referenzieren)</span><span class="fragment">, Actions (Funktionen die ablaufen, wenn ein Element erschaffen wird)</span><span class="fragment">, in:fn/out:fn</span><span class="fragment">, --style-props (zur Übergabe von CSS custom properties)</span><span class="fragment">, <code>&lt;svelte:self></code> (Rekursion, baby)</span><span class="fragment">, createEventDispatcher (Events durch Komponenten bubblen lassen)…</span></p>
+						<p>Text expressions, <code>&lt;div>{(/^[A-Za-z ]+$/).test(value) ? x : y}&lt;/div></code></span><span class="fragment">, <code>{@html}</code></span><span class="fragment">, bind:property (Daten vom Kind ans Elternelement reichen)</span><span class="fragment">, bind:group (Gruppen von <code>input</code> verknüpfen)</span><span class="fragment">, Actions (Funktionen die ablaufen, wenn ein Element erschaffen wird)</span><span class="fragment">, in:fn/out:fn</span><span class="fragment">, --style-props (zur Übergabe von CSS custom properties)</span><span class="fragment">, <code>&lt;svelte:self></code> (Rekursion, baby)</span><span class="fragment">, createEventDispatcher (Events durch Komponenten bubblen lassen)…</span></p>
 						<aside class="notes">
 							<ul>
 								<li>und noch viel mehr.</li>
@@ -494,33 +497,134 @@
 							</ul>
 						</aside>
 					</section>
-					<section data-background-image="/dist/assets/done.gif"  data-transition="zoom"></section>
+					<section data-background-image="/dist/assets/done.gif"  data-transition="zoom">
+						<aside class="notes">
+							<ul>
+								<li>Nunmehr bin ich am Ende des dritten Teils.</li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 				<section>
-					<section><h2>3.<br>Flüssige Animationen</h2></section>
-					<section><h2>Transitions</h2></section>
-					<section data-background-iframe="https://svelte.dev/repl/95febb0ea2ac4f219b93381d8bc500a1"></section>
-					<section><h2>Tweening</h2></section>
-					<section data-background-iframe="https://svelte.dev/repl/ea49ae725be643a9a9d49d8dd7d6744e"></section>
-					<section><h2>Crossfade</h2></section>
-					<section data-background-iframe="https://svelte.dev/repl/6c7eb446ee64438f879985cb8d4982af"></section>
+					<section>
+						<h2>Flüssige Animationen</h2>
+						<aside class="notes">
+							<ul>
+								<li>Der vierte Teil geht wirklich schnell, weil ich nur kurz einige Animationsstärken von Svelte zeigen will. Da müssen wir uns jetzt gar nicht den Code erarbeiten, sondern einfach nur anschauen.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Transitions</h2>
+						<aside class="notes">
+							<ul>
+								<li>Es gibt jede Menge Arten, transitions zu bauen.</li>
+							</ul>
+						</aside>	
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/95febb0ea2ac4f219b93381d8bc500a1">
+						<aside class="notes">
+							<ul>
+								<li>beispielsweise fadeIn, fly, fadeOut…</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Tweening</h2>
+						<aside class="notes">
+							<ul>
+								<li>oder Tweening…</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/ea49ae725be643a9a9d49d8dd7d6744e">
+						<aside class="notes">
+							<ul>
+								<li>mit dem sich schnell Bewegungen und Animation zwischen zwei Datenpunkte realisieren lassen</li>
+								<li>ein Mekka für Infografiker</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Crossfade</h2>
+						<aside class="notes">
+							<ul>
+								<li>Oder crossfade, das DOM-Veränderungen großflächig animieren kann</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/6c7eb446ee64438f879985cb8d4982af">
+						<aside class="notes">
+							<ul>
+								<li>der Code hier ist ___etwas___ länger, aber das ist gar nicht das crossfaden</li>
+								<li>das sieht man, wenn man auf die Todo-Items klickert</li>
+								<li>ich hab das Gefühl, das würde gerade in unsere Retromaschine-App ganz gut reinpassen…</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/wow.gif"  data-transition="zoom">
+						<aside class="notes">
+							<ul>
+								<li>Und schon sind wir am Ende des vierten Teils.</li>
+								<li>Im fünften Teil kommt alles, von dem ich versprochen habe, dass ich es noch erwähnen werde.</li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 				
 				<section>
 					<section>
 						<img src="/dist/assets/svelte.svg" alt="Svelte Logo" width="199" height="240">
 						<h1>Svelte <span style="color: #bbb">Kit</span></h1>
+						<aside class="notes">
+							<ul>
+								<li>Nun geht's also um Svelte Kit.</li>
+								<li>Es gibt Leute die sagen, dass dies die eigentliche Stärke von Svelte ist…</li>
+							</ul>
+						</aside>
 					</section>
 					<section data-background-image="/dist/assets/nkotb.gif">
 						<h1>New kit on the block?</h1>
+						<aside class="notes">
+							<ul>
+								<li>Sorry, couldn't resist.</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<ul>
 							<li>Sort of… <a href="https://svelte.dev/blog/sveltekit-beta">in public beta seit 2021</a>.</li>
 							<li>Es gab einen Vorgänger: „Sapper“, der ähnlich gestrickt war.</li> 
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Tatsächlich ist Svelte Kit wesentlich frischer</li>
+								<li>und auch die Ecke, wo sich das Team um Rich Harris derzeit am meisten drauf konzentriert</li>
+								<li>der Vorgänger von Svelte Kit hieß Sapper</li>
+								<li>aber obwohl Kit noch Beta ist (seit einem Jahr), wird die Verwendung nicht mehr empfohlen</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<blockquote><p>„SvelteKit is a framework for building extremely high-performance web apps.“</p></blockquote>
+						<aside class="notes">
+							<ul>
+								<li>Svelte Kit ist nun das Framework, das Svelte nicht sein will</li>
+								<li>Es fasst die Funktionen von Svelte in einem Webframework zusammen</li>
+								<li>Hat sicherlich auch die gleichen Ziele wie Svelte selbst…</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/kraken.gif">
+						<a target="_blank" href="https://github.com/svelteland/svelte-kit-blog-demo/tree/main/src">Beispielprojekt</a>
+						<a target="_blank" href="https://svelteland.github.io/svelte-kit-blog-demo/">Beispielseite</a>
+						<aside class="notes">
+							<ul>
+								<li>Den Beispielcode dafür muss ich leider in einem neuen Fenster öffnen, da man Github  nicht als iframe in die Präse einhängen darf (logisch)</li>
+								<li>Ich hab mal völlig wahllos eins der hunderten Svelte Blog Forks gegoogelt</li>
+								<li>Hier die Datenstruktur…</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Routing</h2>
@@ -528,6 +632,14 @@
 							<li class="fragment">Seiten</li>
 							<li class="fragment">Endpunkte</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Ein wichtiger Punkt ist sicherlich das Routing.</li>
+								<li>Das kennt im wesentlich zwei Typen:</li>
+								<li>Seiten (pages)</li>
+								<li>und Endpunkte (endpoints)</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Seiten</h2>
@@ -539,10 +651,11 @@
 							<li class="fragment">Das genaue Verhalten ist konfigurierbar.</li>
 							<li class="fragment">Dynamische Routen werden in eckigen Klammern notiert, bspw. <code>src/routes/blog/[slug].svelte</code></li>
 						</ul>
-					</section>
-					<section data-background-image="/dist/assets/kraken.gif">
-						<a target="_blank" href="https://github.com/svelteland/svelte-kit-blog-demo/tree/main/src">Beispielprojekt</a>
-						<a target="_blank" href="https://svelteland.github.io/svelte-kit-blog-demo/">Beispielseite</a>
+						<aside class="notes">
+							<ul>
+								<li>Einfach vorlesen.</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Endpunkte I</h2>
@@ -551,6 +664,11 @@
 							<li class="fragment">Exportiert werden RequestHandler analog zu HTTP-Methoden (GET, POST, DELETE, etc.)</li>
 							<li class="fragment">Endpunkte laufen nur auf dem Server (ausser <em>prerendering</em> ist aktiviert, dann zum Build-Zeitpunkt).</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Vorlesen.</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Endpunkte II</h2>
@@ -558,10 +676,23 @@
 							<li class="fragment">Stellen Daten zur Verfügung, die es nur auf dem Server gibt (bspw. Datenbank, Filesystem…).</li>
 							<li class="fragment"><strong>Seiten-Endpunkte:</strong> Heissen eine Seite und ein Endpunkt (bis auf die Extension gleich), bekommt die Seite automatisch ihre <em>props</em> von dem Endpunkt (per <code>fetch</code> oder Funktionsaufruf(SSR)).</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Vorlesen.</li>
+							</ul>
+						</aside>
 					</section>
 					<section data-background-image="/dist/assets/kraken1.gif">
 						<p><a target="_blank" href="https://github.com/codecandies/rantcalendar">Beispielprojekt</a></p>
 						<p><a target="_blank" href="https://24rants.wtf/">Beispielseite</a></p>
+						<aside class="notes">
+							<ul>
+								<li>das nächste Beispiel ist etwas self plugging</li>
+								<li>mein diesjähriges Adventskalenderprojekt habe ich mit Svelte Kit gebaut</li>
+								<li>Layouts zeigen</li>
+								<li>Jetzt sind alle Türchen geöffnet, aber das sind alles Svelte Komponenten, mit Aufklappmechanismus etc. etc.</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Layouts</h2>
@@ -571,6 +702,11 @@
 							<li class="fragment">Per Konvention gilt die Datei <code>__layout.svelte</code> im Routing-Verzeichnis als Hauptlayout, es können über degleichen Dateien in Unterverzeichnissen auch Layouts gegenseitig eingebettet werden.</li>
 							<li class="fragment">Unterbinden lässt sich die Vererbung mit einer <code>__layout.reset.svelte</code></li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Drittes wichtiges Konzept: Layouts</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Hooks</h2>
@@ -578,6 +714,13 @@
 							<li class="fragment">Es gibt vier Hooks: <code>handle</code>, <code>handleError</code>,<code>getSession</code> und <code>externalFetch</code>.</li>
 							<li class="fragment">Mit diesen Funktionen kann das Standard-Request/-Responseverhalten von Svelte Kit angepasst werden.</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Ich weiß dass in der Reactcommunity Hooks mal ein Thema waren (oder noch sind?)</li>
+								<li>Svelte hat auch Hooks, aber das ist etwas anderes</li>
+								<li>Man schreibt nach Konvention die Hooks in eine hooks.js</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h2>Adapter</h2>
@@ -587,10 +730,31 @@
 							<li class="fragment">Mit dem <code>adapter-node</code> wird eine Node-App gebaut, die man in beliebgen Umgebungen laufen lassen kann.</li>
 							<li class="fragment">Mit <code>adapter-static</code> baut man statische Seiten, dann fungiert Svelte also als SSG.</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Adapter habe ich noch ausprobiert</li>
+								<li>erstes Ziel sind natürlich die bekannten serverless backend services</li>
+								<li>Aber als node-App oder natürlich auch als statische Seiten kann man Svelte Kit auch at home hosten, beispielsweise bei meinem Lieblingshoster Uberspace
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<p>Das ist natürlich längst nicht alles, nur alles, was ich bis jetzt ausprobieren konnte.</p>
 						<p><a href="https://kit.svelte.dev/docs/introduction">In der Doku</a> findet sich natürlich noch einiges mehr an Funktionalitäten…</p>
+						<aside class="notes">
+							<ul>
+								<li>Svelte Kit ist viel größer, hier musste ich viel mehr weglassen.</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/ted.gif">
+						<aside class="notes">
+							<ul>
+								<li>Das war es aber erst einmal.</li>
+								<li>Vielen Dank fürs Zuhören.</li>
+								<li>Gibt es Fragen?</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 			</div>
