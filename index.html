@@ -263,37 +263,206 @@
 							<li class="fragment">Diese haben jeweils ihren eigenen Scope.</li>
 						</li>
 					</section>
-					<section data-background-iframe="https://svelte.dev/repl/658d63b0eee740079181ac246fbb5348"></section>
-					<section><h2>Kontrollstrukturen</h2></section>
-					<section data-background-iframe="https://svelte.dev/repl/d2bb1781d03547e2a272f7b0bf9460cc"></section>
-					<section data-background-iframe="https://svelte.dev/repl/ad5cccee5fec40b1a237993711e994e1"></section>
-					<section data-background-iframe="https://svelte.dev/repl/4e85459f270e411ea50a0c52d0d13144"></section>
-					<section><h2>Events</h2></section>
-					<section data-background-iframe="https://svelte.dev/repl/41af029da6ac4392943492dc989a1042"></section>
-					<section data-background-iframe="https://svelte.dev/repl/8efd691a5c494fbda029b2ed581716d6"></section>
-					<section><h2>Properties</h2></section>
-					<section data-background-iframe="https://svelte.dev/repl/dcac3f0d004849f6880454e2e18fb7e2"></section>
-					<section><h2>Lifecycle functions</h2></section>
-					<section data-background-iframe="https://svelte.dev/repl/62d06c822ad14e2a8fa4b426cb7967dc"></section>
-					<section data-background-iframe="https://svelte.dev/repl/014c76a83f1f4e888a0c73b1e1060de9"></section>
+					<section data-background-iframe="https://svelte.dev/repl/658d63b0eee740079181ac246fbb5348">
+						<aside class="notes">
+							<ul>
+								<li>Das mit dem Importieren und dem Scope führe ich hier mal kurz vor</li>
+								<li>per Konvention werden Komponentendateien und Variable groß geschrieben</li>
+								<li>der importierte Absatz hat ein span, trotzdem zieht das CSS aus der Elternkomponente hier nicht. Also ist auch das CSS gescopet. Man kann natürlich globales CSS schreiben.</li>
+								<li>Im wesentlichen ist das aber schon der feuchte Traum aller Frontendentwickler: gescopte Komponenten.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Kontrollstrukturen</h2>
+						<aside class="notes">
+							<ul>
+								<li>Es gibt auch ein paar nicht so schöne Dinge, bspw. die Kontrollstrukturen, die im HTML auftauchen</li>
+								<li>Und an Templatesprachen wie Jinja oder Handlebars o.ä. erinnern</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/d2bb1781d03547e2a272f7b0bf9460cc">
+						<aside class="notes">
+							<ul>
+								<li>Einen Tod muss man wohl sterben</li>
+								<li>hier also if</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/ad5cccee5fec40b1a237993711e994e1">
+						<aside class="notes">
+							<ul>
+								<li>Und hier each.</li>
+								<li>Man beachte auch den praktischen Else-Zweig.</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/4e85459f270e411ea50a0c52d0d13144">
+						<aside class="notes">
+							<ul>
+								<li>Etwas interessanter die Async-Funktion</li>
+								<li>ich habe extra drei Sekunden Pause eingebaut</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Events</h2>
+						<aside class="notes">
+							<ul>
+								<li>Auch eher wie ein Schritt zurück erscheint einem die Notation von Events.</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/41af029da6ac4392943492dc989a1042">
+						<aside class="notes">
+							<ul>
+								<li>die sich der gute Richard mglw. bei Vue und Angular abgeschaut hat</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/8efd691a5c494fbda029b2ed581716d6">
+						<aside class="notes">
+							<ul>
+								<li>Und die Arrow-Schreibweise von Funktionen wurde quasi erdacht</li>
+								<li>um solche verkürzten Ausdrücke schreiben zu können</li>
+								<li>___im___ HTML. Sicherlich nicht jedermenschs Sache.</li>
+								<li>Zum Glück aber kein Zwang.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Properties</h2>
+						<aside class="notes">
+							<ul>
+								<li>Eine Möglichkeit von oben nach unten Daten durchzureichen sind Properties.</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/dcac3f0d004849f6880454e2e18fb7e2">
+						<aside class="notes">
+							<ul>
+								<li>zunächst App.svelte zeigen: Property löschen</li>
+								<li>das <b>export</b> Keyword wird von Svelte hier etwas mißbraucht, const wäre falsch</li>
+								<li>dann App2.svelte in App.svelte kopieren, Properties am Button</li>
+								<li>mit dem Spread-Operator kann man hier viel Zeit sparen</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Lifecycle functions</h2>
+						<aside class="notes">
+							<ul>
+								<li>Jetzt wird es langsam interessant…</li>
+								<li>es gibt eine reihe von sog. lifycyle functions</li>
+								<li>mit denen wir ein wenig in Sveltes inneres Zeitmanagement schauen wollen</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/62d06c822ad14e2a8fa4b426cb7967dc">
+						<aside class="notes">
+							<ul>
+								<li>onMount, beforeUpdate, afterUpdate, onDestroy</li>
+								<li>beziehen sich auf den Lebenslauf einer Komponente</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-iframe="https://svelte.dev/repl/014c76a83f1f4e888a0c73b1e1060de9">
+						<aside class="notes">
+							<ul>
+								<li>hier nochmal beforeUpdate</li>
+								<li>und Tick, die fünfte im Bunde der lifecycle functions</li>
+							</ul>
+						</aside>
+					</section>
 					<section>
 						<h2>Tick?</h2>
 						<blockquote>Returns a promise that resolves once any pending state changes have been applied, or in the next <em style="color:#FF3C00">microtask</em> if there are none..</blockquote>
+						<aside class="notes">
+							<ul>
+								<li>Tick gibt ein Promise zurück, das resolved, wenn sich der lifecycle einer Komponente ändert</li>
+								<li>oder wenn der nächste Microtask ansteht…</li>
+								<li>der was?</li>
+							</ul>
+						</aside>
 					</section>
-					<section data-background-image="/dist/assets/bueller-anyone.gif"  data-transition="zoom"></section>
+					<section data-background-image="/dist/assets/bueller-anyone.gif"  data-transition="zoom">
+						<aside class="notes">
+							<ul>
+								<li>Microtasks sind ein interessantes Konstrukt in Svelte</li>
+								<li>deren Beschreibung lesen wir mal im Original</li>
+							</ul>
+						</aside>
+					</section>
 					<section>
 						<blockquote>When you update component state in Svelte, it doesn't update the DOM immediately. Instead, it waits until the next microtask to see if there are any other changes that need to be applied, including in other components. Doing so avoids unnecessary work and allows the browser to batch things more effectively.</blockquote>
+						<aside class="notes">
+							<ul>
+								<li>die Microtasks sind also regelmäßig auftretende Events</li>
+								<li>zu deren Auftreten eine ganze Reihe von Aktionen abgearbeitet werden</li>
+								<li>vorher passiert quasi erstmal nichts…</li>
+							</ul>
+						</aside>
 					</section>
-					<section data-background-iframe="https://svelte.dev/repl/9847a030c6e946e583837839a3799452"></section>
-					<section data-background-image="/dist/assets/radioactivity.jpg" data-background-size="contain" data-transition="zoom"></section>
-					<section><h2>Reactive statements</h2></section>
+					<section data-background-iframe="https://svelte.dev/repl/9847a030c6e946e583837839a3799452">
+						<aside class="notes">
+							<ul>
+								<li>Hier ein Beispiel.</li>
+								<li>element = DOM node (bind:this)</li>
+								<li>onClick verändern wir den Wert von Number und lesen ihn am DOM-node aus</li>
+								<li>und er bleibt bei 1, bis das DOM danach upgedated wird (Microtask)</li>
+								<li>Mit tick wäre das nicht passiert.</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/radioactivity.jpg" data-background-size="contain" data-transition="zoom">
+						<aside class="notes">
+							<ul>
+								<li>das ganze gehört zu einem der wichtigsten Konzepte von Svelte</li>
+								<li>der Reaktivität</li>
+								<li>das ist so wichtig, dass es in der Doku ganz vorne steht</li>
+								<li>und dort leider gerne überlesen wird</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Reactive statements</h2>
+						<aside class="notes">
+							<ul>
+								<li>für reactive statements wird wieder JS Syntax hmm…</li>
+								<li>ich sag mal, sehr weit ausgelegt</li>
+							</ul>
+						</aside>
+					</section>
 					<section>
 						<blockquote>Any top-level statement (i.e. not inside a block or a function) can be made reactive by prefixing it with the $: JS label syntax. Reactive statements run immediately before the component updates, whenever the values that they depend on have changed.</blockquote>
 					</section>
-					<section data-background-iframe="https://svelte.dev/repl/f1ca21d52bde47c0931128dd9c0167ac"></section>
-					<section data-background-image="/dist/assets/more.gif"  data-transition="zoom"></section>
+					<section data-background-iframe="https://svelte.dev/repl/f1ca21d52bde47c0931128dd9c0167ac">
+						<aside class="notes">
+							<ul>
+								<li>Man darf in JS nämlich an sehr vielen Stellen label einführen, nicht nur in switch-Statements</li>
+								<li>Svelte nutzt das $-Zeichen</li>
+								<li>um reaktive Werte und Funktionen zu kennzeichen Funktionen</li>
+								<li>die laufen dann jedes Mal ab, wenn der  Wert von dem sie abhängen sich ändert</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-background-image="/dist/assets/more.gif"  data-transition="zoom">
+						<aside class="notes">
+							<ul>
+								<li>Das ist ein lustiges Konzept…</li>
+								<li>eins zieht sozusagen das andere nach sich…</li>
+								<li>Es gibt natürlich noch tausend andere Dinge, die ich hier auslassen musste</li>
+							</ul>
+						</aside>
+					</section>
 					<section>
 						<p>Text expressions, <code>&lt;div>{(/^[A-Za-z ]+$/).test(value) ? x : y}&lt;/div></code></span><span class="fragment">, <code>{@html}</code></span><span class="fragment">, bind:property (Daten vom Kind ans Elternelement reichen)</span><span class="fragment">, bind:group (Gruppen von <code>input</code> verknüpfen)</span><span class="fragment">, bind:this (DOM-Node referenzieren)</span><span class="fragment">, Actions (Funktionen die ablaufen, wenn ein Element erschaffen wird)</span><span class="fragment">, in:fn/out:fn</span><span class="fragment">, --style-props (zur Übergabe von CSS custom properties)</span><span class="fragment">, <code>&lt;svelte:self></code> (Rekursion, baby)</span><span class="fragment">, createEventDispatcher (Events durch Komponenten bubblen lassen)…</span></p>
+						<aside class="notes">
+							<ul>
+								<li>und noch viel mehr.</li>
+							</ul>
+						</aside>
 					</section>
 					<section data-background-image="/dist/assets/onelastthing.gif"  data-transition="zoom">
 						<h1>Eine letzte Sache noch</h1>
@@ -310,8 +479,21 @@
 					<section>
 						<p>Ein Store ist ein Objekt mit einer <code>subscribe()</code> Methode, die <em>interessierte Parteien</em> benachrichtigt, wann immer der Inhalt des Stores geändert wird. Optional gibt es eine <code>set()</code> Methode, die neue Werte im Store setzen kann. Dieses minimale Interface nennt sich <em>store contract</em>.</p>
 						<p class="fragment">Svelte: readable, writable and derived store.</p>
+						<aside class="notes">
+							<ul>
+								<li>das hört sich doch sehr nach Redux oder Vuex an</li>
+								<li>und klingt auch etwas nach Dan Abramov</li>
+								<li>einer der erklärten Helden der Frontendgilde</li>
+							</ul>
+						</aside>
 					</section>
-					<section data-background-iframe="https://svelte.dev/repl/f1d669b662ba41b2bf71e2d0a2ca8c43"></section>
+					<section data-background-iframe="https://svelte.dev/repl/f1d669b662ba41b2bf71e2d0a2ca8c43">
+						<aside class="notes">
+							<ul>
+								<li>einmal alle Komponenten zeigen</li>
+							</ul>
+						</aside>
+					</section>
 					<section data-background-image="/dist/assets/done.gif"  data-transition="zoom"></section>
 				</section>
 				<section>
